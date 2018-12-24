@@ -1,0 +1,10 @@
+<%if @error%>
+    <p><%=@error%></p>
+<%end%>
+<%= form_tag("/sign_in", method: "post") do %>
+    <%= label_tag(:email, "email") %>
+    <%= email_field :credential, :email %>
+    <%= label_tag :password, "password" %>
+    <%= password_field :credential, :password%>
+    <%= submit_tag("ログイン") %>
+<% end %>

@@ -25,6 +25,7 @@ class UserController < ApplicationController
     end
 
     def sign_up_page
+
     end
 
     #実質sign_up
@@ -33,9 +34,29 @@ class UserController < ApplicationController
     #user modelでemailを検索.同じものがあったときはエラーで返す
     #
     def create
+        credential = params['credential']
+        @mail = credential['email']
+        @password = credential['password']
+        @name = credential['name']
 
+        @id = get_user_id
+        user = User.new(mail: @mail, name:@name, password: @password, id:@id)
+
+        if user.save
+            set_user_id(@id)
+            redirect_to('/profiles')
+        else
+            @error = '記入に不備があるようです'
+            render "user/sign_up_page"
+        end
     end
 
     def destroy
+    end
+
+    private
+
+    def get_user_id
+        return User.count
     end
 end

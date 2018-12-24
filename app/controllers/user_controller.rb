@@ -19,8 +19,6 @@ class UserController < ApplicationController
             set_user_id(user.id)
             redirect_to('/profiles')
         else
-            @credential.email = @mail
-            @credential.password = @password
             @error = 'メールアドレスかパスワードが正しくありません'
             render "user/sign_in_page"
         end

@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <header class="header"> 
+    <div class="header--container">
+        <%= image_tag('title.png',class: "logo") %>
+        <ul class="gnav">
+            <li class="gnav--item">
+              <%= link_to('展示一覧をみる','/profiles',class: "gnav--item--link")%>
+            </li>
+            <li class="gnav--item">
+                <%= link_to('ログイン','/sign_in',class: "gnav--item--link")%>
+            </li>
+        </ul>
+    </div>      
+  </header>
     <%= yield %>
   </body>
 </html>

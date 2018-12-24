@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get '/sign_in' => 'user#sign_in_page'
   post '/sign_in' => 'user#sign_in'
   get '/sign_up' => 'user#sign_up_page'
+  post '/sign_up' => 'user#create'
+  get '/sign_up' => 'user#sign_up_page'
 end

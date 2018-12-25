@@ -1,3 +1,61 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.article-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-auto-rows: 1fr;
+    grid-gap: 10rem;
+    padding-bottom: 6rem;
+    max-width: 114rem;
+    margin:0 auto;
+    height: 100%;
+}
+
+.card {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.3);
+
+    &--top-image {
+        width: 100%;
+        height: 25rem;
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &--content{
+        padding:1rem;
+
+        &-name {
+            font-size: 1.4rem;
+        }
+
+        &-author {
+            color: #d5d5d5;
+        }
+    }
+
+    &--link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: all .2s;
+
+        &:hover {
+            background-color: rgba(255,255,255,.3);
+        }
+    }
+
+}
+
+.gaku {
+    width: 100%;
+    height: 100%;
+}

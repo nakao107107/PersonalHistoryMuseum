@@ -26,6 +26,12 @@
     <%= form.text_field :image %>
   </div>
 
+  <%= form.fields_for :q_and_a do |q_and_a|%>
+    <%= q_and_a.collection_select(:question_id, Question.all, :id, :content) %>
+    <%= q_and_a.text_field :answer %>
+
+  <%end%>
+
   <div class="actions">
     <%= form.submit %>
   </div>

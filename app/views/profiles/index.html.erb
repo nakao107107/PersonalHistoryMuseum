@@ -3,7 +3,7 @@
 <section class="article">
   <div class="page-title-container">
       <h3 class="page-title">作品一覧</h3>
-      <a id="edit-btn" href="input.html">作品を投稿</a>
+      <%= link_to('作品を投稿','/profiles/new',id: "edit-btn")%>
   </div>
   <div class="article-container">
     <% @profiles.each do |profile| %>

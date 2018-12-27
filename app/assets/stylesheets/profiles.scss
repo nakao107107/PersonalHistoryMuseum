@@ -25,6 +25,27 @@
 
 }
 
+.form-container {
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+.form-field {
+    margin-bottom: 3rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+.form-field {
+    display: block;
+    font-size: 1.6rem;
+    padding:.1rem;
+    width: 50%;
+}
+
 .page-title {
     font-size: 2rem;
 

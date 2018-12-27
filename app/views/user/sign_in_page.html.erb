@@ -1,10 +1,15 @@
-<%if @error%>
-    <p><%=@error%></p>
-<%end%>
-<%= form_tag("/sign_in", method: "post") do %>
-    <%= label_tag(:email, "email") %>
-    <%= email_field :credential, :email %>
-    <%= label_tag :password, "password" %>
-    <%= password_field :credential, :password%>
-    <%= submit_tag("ログイン") %>
-<% end %>
+<div class="login-page">
+    <%if @error%>
+        <p><%=@error%></p>
+    <%end%>
+    <div class="login-form-container ">
+        <div class="exp-container"></div>
+        <div class="login-form">
+            <%= form_tag("/sign_in", method: "post", class: "form") do %>
+                <%= email_field :credential, :email, placeholder: "E-mail", class: "login-input-field" %>
+                <%= password_field :credential, :password, placeholder: "PassWord", class: "login-input-field"%>
+                <%= submit_tag "ログイン", class: "login-submit-btn" %>
+            <% end %>
+        </div>
+    </div>
+</div>

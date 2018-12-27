@@ -1,3 +1,95 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login-page {
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(museum.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-form-container {
+    width: 70%;
+    height: 60vh;
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
+    animation-name: fade-in;
+    animation-duration: .5s;
+
+    display: flex;
+
+    .exp-container {
+        width: 50%;
+        height:100%;
+        background-color: #f78733;
+    }
+
+    .login-form {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .form {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+
+            .login-input-field {
+                display: block;
+                width: 80%;
+                font-size: 1.6rem;
+                padding: 1rem 1rem;
+                border:none;
+                margin-bottom: 3rem;
+                color:#3e3e3e;
+
+                &::placeholder{
+                    color: #e3e3e3;
+                }
+                
+            }
+
+            .login-submit-btn {
+                display: block;
+                text-align: center;
+                border: none;
+                background-color: #f78733;
+                color: white;
+                font-size: 1.6rem;
+                padding: 1rem 3rem;
+                transition: .2s;
+                width: 80%;
+                cursor: pointer;
+            
+                &:hover {
+                    background-color: #f7ad75;
+                    color: white;
+                }
+            }
+
+
+        }
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translate(-50%,-70%);
+    }
+
+    100% {
+        opacity: 1;
+    }   
+}

@@ -11,19 +11,15 @@
     </div>
   <% end %>
 
+  <p><%=params[:id]%></p>
   <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+    <%= form.label :title, "自分の病名",class: "form-label"%>
+    <%= form.text_field :title, class: "form-field" %>
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.label :image, "画像",class: "form-label" %>
+    <%= form.text_field :image, class: "form-field"%>
   </div>
 
   <%= form.fields_for :q_and_a do |q_and_a|%>

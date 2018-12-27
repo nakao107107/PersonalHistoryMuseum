@@ -14,8 +14,14 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
-    @profile.q_and_a.build
+    p params['id']
+    if (params[:id].nil?)
+      redirect_to('/sign_in')
+    else
+      @profile = Profile.new
+      @profile.user_id = params['id']
+      @profile.q_and_a.build
+    end
   end
 
   # GET /profiles/1/edit

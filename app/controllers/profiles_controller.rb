@@ -14,12 +14,10 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    p params['id']
-    if (params[:id].nil?)
+    if (session[:id].nil?)
       redirect_to('/sign_in')
     else
       @profile = Profile.new
-      @profile.user_id = params['id']
       @profile.q_and_a.build
     end
   end
@@ -32,6 +30,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
+    @profile.user_id = session[:id]
 
     respond_to do |format|
       if @profile.save

@@ -18,9 +18,15 @@
             <li class="gnav--item">
               <%= link_to('展示一覧をみる','/profiles',class: "gnav--item--link")%>
             </li>
-            <li class="gnav--item">
-                <%= link_to('ログイン','/sign_in',class: "gnav--item--link")%>
-            </li>
+            <%if (session[:id].nil?)%>
+              <li class="gnav--item">
+                  <%= link_to('ログイン','/sign_in',class: "gnav--item--link")%>
+              </li>
+            <%else%>
+              <li class="gnav--item">
+                  <%= link_to('ログアウト','/sign_in',class: "gnav--item--link")%>
+              </li>
+            <%end%>
         </ul>
     </div>      
   </header>

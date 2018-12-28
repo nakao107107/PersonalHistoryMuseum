@@ -1,7 +1,41 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.error-message {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.6rem;
+    color: white;
+    background-color: #EF2D56;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    position: relative;
+
+    transition: .2s;
+
+    transform-origin: top;
+
+    .close {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5rem;
+        height: 5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 3rem;
+
+        cursor: pointer;
+
+    }
+}
 .login-page {
     background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(museum.jpg);
     background-size: cover;
@@ -70,12 +104,19 @@
                 padding: 1rem 3rem;
                 transition: .2s;
                 width: 80%;
+                margin-bottom: 4rem;
                 cursor: pointer;
             
                 &:hover {
                     background-color: #f7ad75;
                     color: white;
                 }
+            }
+
+            .go-signup {
+                font-size: 1.4rem;
+                color: #3e3e3e;
+
             }
 
 

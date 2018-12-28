@@ -1,6 +1,10 @@
 <div class="login-page">
     <%if @error%>
-        <p><%=@error%></p>
+        <p class="error-message">
+            <%=@error%>
+            <span class="close">×</span>
+        </p>
+        
     <%end%>
     <div class="login-form-container ">
         <div class="exp-container"></div>
@@ -9,6 +13,7 @@
                 <%= email_field :credential, :email, placeholder: "E-mail", class: "login-input-field" %>
                 <%= password_field :credential, :password, placeholder: "PassWord", class: "login-input-field"%>
                 <%= submit_tag "ログイン", class: "login-submit-btn" %>
+                <%= link_to("新規登録はこちらから >","/sign_up",class: "go-signup")%>
             <% end %>
         </div>
     </div>

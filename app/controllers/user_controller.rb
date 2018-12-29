@@ -51,6 +51,12 @@ class UserController < ApplicationController
         end
     end
 
+    def sign_out
+        session[:id] = nil
+        @notice = 'ログアウトしました'
+        render('user/sign_in_page')
+    end
+
     def destroy
     end
 

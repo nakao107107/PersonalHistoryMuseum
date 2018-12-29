@@ -3,8 +3,13 @@
         <p class="error-message">
             <%=@error%>
             <span class="close">×</span>
-        </p>
-        
+        </p>  
+    <%end%>
+    <%if @notice%>
+        <p class="success-message">
+            <%=@notice%>
+            <span class="close">×</span>
+        </p>  
     <%end%>
     <div class="login-form-container ">
         <div class="exp-container"></div>

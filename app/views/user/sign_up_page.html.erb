@@ -1,12 +1,21 @@
-<%if @error%>
-    <p><%=@error%></p>
-<%end%>
-<%= form_tag("/sign_up", method: "post") do %>
-    <%= label_tag(:email, "email") %>
-    <%= email_field :credential, :email %>
-    <%= label_tag(:name, "name") %>
-    <%= text_field :credential, :name %>
-    <%= label_tag :password, "password" %>
-    <%= password_field :credential, :password%>
-    <%= submit_tag("新規登録") %>
-<% end %>
+<div class="login-page">
+    <%if @error%>
+        <p class="error-message">
+            <%=@error%>
+            <span class="close">×</span>
+        </p>
+        
+    <%end%>
+    <div class="login-form-container ">
+        <div class="exp-container"></div>
+        <div class="login-form">
+            <%= form_tag("/sign_up", method: "post", class: "form") do %>
+                <%= email_field :credential, :email, placeholder: "E-mail", class: "login-input-field" %>
+                <%= text_field :credential, :name, placeholder: "Name", class: "login-input-field" %>
+                <%= password_field :credential, :password, placeholder: "PassWord", class: "login-input-field"%>
+                <%= submit_tag "新規登録", class: "login-submit-btn" %>
+                <%= link_to("すでに登録がお済みの方はこちらから >","/sign_in",class: "go-signup")%>
+            <% end %>
+        </div>
+    </div>
+</div>

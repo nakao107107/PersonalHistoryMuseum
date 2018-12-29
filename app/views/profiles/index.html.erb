@@ -16,7 +16,7 @@
             <%@name = User.find_by(id: profile.user_id).name%>
             <p class="card--content-author"><%=@name%></p>
         </div>
-        <a class="card--link" href="details.html"></a>
+        <a class="card--link" href='<%= "/profiles/#{profile.id}"%>''></a>
       </div>
     <% end %>
   </div>

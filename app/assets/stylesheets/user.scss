@@ -160,6 +160,61 @@
     }
 }
 
+
+.details-container {
+    max-width: 114rem;
+    margin:0 auto;
+}
+
+.jambotron {
+    background-image: url(https://content.cawaii.media/articles/images/14868/original/575123d270382140adc79eed6021e7e4b91a5055.png?1500741424);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+
+.question{
+    font-size: 1.6rem;
+}
+
+.answer{
+    font-size: 1.6rem;
+}
+
+#like-btn {
+    position: fixed;
+    cursor: pointer;
+    right: 15rem;
+    bottom: 5rem;
+    text-decoration: none;
+    color: #f78733;
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: white;
+    border:1px solid #f78733;
+    padding:1.2rem 2.2rem;
+    border-radius: 100rem;
+    transition: all.2s;
+}
+
+#like-btn:hover{
+    transform: translateY(-.3rem);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.3);
+}
+
+#like-btn:active{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .3rem 1rem rgba(0,0,0,0.3);
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;

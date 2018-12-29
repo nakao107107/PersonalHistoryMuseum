@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @profile.user_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @profile.title %>
-</p>
+<section class="details-container">
+<div class="jambotron" style="background-image: url(<%= @profile.image%>);">
+</div>
+<h3 class="article-title"><%= @profile.title %></h3>
 
-<p>
-  <strong>Image:</strong>
-  <%= @profile.image %>
-</p>
+<%if ! @profile.q_and_a.empty?%>
+  <%@profile.q_and_a.each do |q_and_a_each|%>
+    <div class="q-and-a">
+      <h5 class="question">Q. <%= Question.find_by(id: q_and_a_each.question_id).content%></h5>
+      <p class="answer">A. <%= q_and_a_each.answer%></p>
+    </div>
+  <%end%>
+<%else%>
+    <p class="answer">登録された質問はありません</p>
+<%end%>
+
+
+<a id="like-btn">共感した！</a>
+</section>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/sign_up' => 'user#sign_up_page'
   post '/sign_up' => 'user#create'
   get '/sign_up' => 'user#sign_up_page'
+  delete '/sign_out' => 'user#sign_out'
 end

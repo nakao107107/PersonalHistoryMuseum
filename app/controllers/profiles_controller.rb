@@ -15,7 +15,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     if (session[:id].nil?)
-      redirect_to('/sign_in')
+      @error = "作品の投稿にはログインが必要です"
+      render ('user/sign_in_page')
     else
       @profile = Profile.new
       @profile.q_and_a.build

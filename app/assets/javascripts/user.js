@@ -3,4 +3,8 @@ $(document).ready(()=>{
         console.log("click");
         $('.error-message').css('transform','scaleY(0.00001)');
     });
+    $('.close').click(()=>{
+        console.log("click");
+        $('.success-message').css('transform','scaleY(0.00001)');
+    });
 });
